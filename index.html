@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pulse Dash</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">API Powered Geometry Runner</p>
+        <h1>Pulse Dash</h1>
+      </div>
+      <div class="status-pill" id="apiStatus">Connecting to backend...</div>
+    </header>
+
+    <main class="layout">
+      <section class="game-panel">
+        <div class="hud">
+          <div class="metric">
+            <span>Attempt</span>
+            <strong id="attemptValue">0</strong>
+          </div>
+          <div class="metric">
+            <span>Progress</span>
+            <strong id="progressValue">0%</strong>
+          </div>
+          <div class="metric">
+            <span>Orbs</span>
+            <strong id="orbValue">0</strong>
+          </div>
+          <div class="metric">
+            <span>Best</span>
+            <strong id="bestValue">0%</strong>
+          </div>
+        </div>
+
+        <div class="canvas-shell">
+          <canvas id="gameCanvas" width="1280" height="720" aria-label="Pulse Dash game canvas"></canvas>
+          <div class="overlay" id="overlay">
+            <p class="overlay-kicker">Level: Neon Circuit</p>
+            <h2 id="overlayTitle">Tap Space To Begin</h2>
+            <p id="overlayText">Jump over spikes, ride the pads, and hit every pulse orb.</p>
+            <div class="controls">
+              <span>`Space` / `Arrow Up` to jump</span>
+              <span>`R` to restart</span>
+              <span>Tap or click also works</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="side-panel">
+        <section class="card">
+          <h3>Level Feed</h3>
+          <p id="levelSummary">Loading level data...</p>
+          <div class="progress-track">
+            <div class="progress-bar" id="progressBar"></div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h3>Leaderboard</h3>
+          <ul class="score-list" id="scoreList">
+            <li>Waiting for scores...</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h3>Run Notes</h3>
+          <ul class="notes">
+            <li>The Python backend serves the level geometry and stores run stats.</li>
+            <li>The frontend requests the level through `/api/level` before gameplay starts.</li>
+            <li>Each death or completion posts a run record back to `/api/run`.</li>
+          </ul>
+        </section>
+      </aside>
+    </main>
+  </div>
+
+  <script src="/static/app.js" type="module"></script>
+</body>
+</html>
