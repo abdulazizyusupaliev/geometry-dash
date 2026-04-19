@@ -17,6 +17,7 @@
     { "x": 4460, "width": 98, "height": 100 },
     { "x": 4880, "width": 120, "height": 164 }
   ],
+  
   "jump_pads": [
     { "x": 1230, "width": 96, "height": 22, "boost": 870 },
     { "x": 3090, "width": 96, "height": 22, "boost": 900 },
