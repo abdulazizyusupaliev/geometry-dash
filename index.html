@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geometry Dash Frontend</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Orbitron:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Frontend-only remake</p>
+        <h1>Geometry Dash Rebuilt For The Browser</h1>
+        <p class="hero-text">
+          A fast, neon runner with frontend-only gameplay, procedural hazards, score tracking,
+          and collectible power-ups that change how each run feels.
+        </p>
+        <div class="hero-actions">
+          <a href="#game" class="button button-primary">Play Now</a>
+          <a href="#powerups" class="button button-secondary">See Power-Ups</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-stat">
+          <span class="hero-stat-label">Mode</span>
+          <strong>Arcade Runner</strong>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-label">Stack</span>
+          <strong>HTML + CSS + JS</strong>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-label">Boosts</span>
+          <strong>Shield, Warp, Surge</strong>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="info-grid">
+        <article class="info-panel">
+          <p class="panel-label">Gameplay Loop</p>
+          <h2>Tap, jump, survive, chain upgrades</h2>
+          <p>
+            The cube auto-runs. Obstacles scale up over time, and power-up capsules spawn
+            mid-run to give you short bursts of control.
+          </p>
+        </article>
+        <article class="info-panel">
+          <p class="panel-label">Controls</p>
+          <ul class="controls-list">
+            <li><span>Jump</span><strong>Space / Click / Tap</strong></li>
+            <li><span>Restart</span><strong>R</strong></li>
+            <li><span>Pause</span><strong>P</strong></li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="game" class="game-section">
+        <div class="section-heading">
+          <p class="panel-label">Playable Demo</p>
+          <h2>Frontend Geometry Dash Prototype</h2>
+        </div>
+
+        <div class="game-layout">
+          <div class="game-frame">
+            <canvas id="gameCanvas" width="960" height="540" aria-label="Geometry Dash game"></canvas>
+            <div id="overlay" class="overlay hidden">
+              <div class="overlay-card">
+                <p class="overlay-label">Run Over</p>
+                <h3 id="overlayTitle">Crash Detected</h3>
+                <p id="overlayText">Press R or tap restart to go again.</p>
+                <button id="restartButton" class="button button-primary" type="button">Restart Run</button>
+              </div>
+            </div>
+          </div>
+
+          <aside class="hud-panel">
+            <div class="hud-block">
+              <span class="hud-label">Score</span>
+              <strong id="scoreValue">0</strong>
+            </div>
+            <div class="hud-block">
+              <span class="hud-label">Best</span>
+              <strong id="bestValue">0</strong>
+            </div>
+            <div class="hud-block">
+              <span class="hud-label">Speed</span>
+              <strong id="speedValue">1.0x</strong>
+            </div>
+            <div class="hud-block full">
+              <span class="hud-label">Active Power-Up</span>
+              <strong id="powerupValue">None</strong>
+              <div id="powerupTimer" class="timer-bar"><span></span></div>
+            </div>
+            <button id="pauseButton" class="button button-secondary" type="button">Pause</button>
+          </aside>
+        </div>
+      </section>
+
+      <section id="powerups" class="powerup-section">
+        <div class="section-heading">
+          <p class="panel-label">Power-Ups</p>
+          <h2>Three boosts that alter the run</h2>
+        </div>
+        <div class="powerup-grid">
+          <article class="powerup-card shield">
+            <span class="powerup-icon">◈</span>
+            <h3>Shield Core</h3>
+            <p>Absorbs one crash and lets the run continue instead of ending immediately.</p>
+          </article>
+          <article class="powerup-card slow">
+            <span class="powerup-icon">◌</span>
+            <h3>Time Warp</h3>
+            <p>Temporarily slows world speed so dense obstacle sections become readable.</p>
+          </article>
+          <article class="powerup-card jump">
+            <span class="powerup-icon">▲</span>
+            <h3>Jump Surge</h3>
+            <p>Boosts jump height for a short window so stacked spikes are easier to clear.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
