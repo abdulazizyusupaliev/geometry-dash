@@ -1,34 +1,23 @@
-# Pulse Dash
+# Geometry Dash Frontend
 
-Pulse Dash is a Geometry Dash inspired browser game with a Python API backend and an HTML/CSS/JavaScript frontend.
+Frontend-only Geometry Dash inspired browser project built with plain HTML, CSS, and JavaScript.
 
-## Stack
+## Features
 
-- Python `FastAPI` backend for level, health, and score APIs
-- HTML, CSS, and vanilla JavaScript frontend
-- Canvas rendering for the game visuals
+- Playable canvas runner with jump, pause, and restart controls
+- Score and best-score tracking in `localStorage`
+- Three collectible power-ups:
+  - `Shield Core` absorbs one collision
+  - `Time Warp` slows the run temporarily
+  - `Jump Surge` increases jump height
+- Responsive neon arcade landing page and game layout
 
-## API Endpoints
+## Files
 
-- `GET /api/health`
-- `GET /api/level`
-- `GET /api/scores`
-- `POST /api/run`
+- `index.html` for structure and UI
+- `style.css` for layout and visual design
+- `script.js` for gameplay and power-up logic
 
 ## Run Locally
 
-1. Install dependencies:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-2. Start the backend:
-
-   ```bash
-   uvicorn backend.app:app --reload
-   ```
-
-3. Open `http://127.0.0.1:8000`
-
-The frontend is served by the backend and reads its level and leaderboard from the API.
+Open `index.html` in a browser.
